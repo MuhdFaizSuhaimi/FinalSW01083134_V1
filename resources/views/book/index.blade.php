@@ -21,6 +21,7 @@
                             <th>Category</th>
                             <th>Author</th>
                             <th>Publisher</th>
+                            <th>Published Year</th>
                             <th>Status</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -33,6 +34,7 @@
                                     <td>{{ $book->category->name }}</td>
                                     <td>{{ $book->auther->name }}</td>
                                     <td>{{ $book->publisher->name }}</td>
+                                    <td>{{ $book->published_year }}</td>
                                     <td>
                                         @if ($book->status == 'Y')
                                             <span class='badge badge-success'>Available</span>

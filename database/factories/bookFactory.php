@@ -18,6 +18,7 @@ class bookFactory extends Factory
             'category_id' => random_int(1,10),
             'auther_id' => random_int(1,10),
             'publisher_id' => random_int(1,10),
+            'published_year' => $this->faker->date('Y_m_d'),
             'status' => 'Y'
         ];
     }

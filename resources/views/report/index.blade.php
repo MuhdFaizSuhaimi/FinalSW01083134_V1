@@ -30,7 +30,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body text-center">
                             <a href="{{ route('reports.not_returned') }}" class="card-link">
-                                <h5 class="card-title mb-0">Not Returned</h5>
+                                <h5 class="card-title mb-0">Returned Status</h5>
                             </a>
                         </div>
                     </div>

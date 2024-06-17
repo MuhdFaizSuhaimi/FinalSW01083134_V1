@@ -12,6 +12,7 @@ use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\VolunteerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +91,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/book-issue/delete/{id}', [BookIssueController::class, 'destroy'])->name('book_issue.destroy');
     Route::post('/book-issue/create', [BookIssueController::class, 'store'])->name('book_issue.store');
 
+    Route::get('/book-issue', [BookIssueController::class, 'search_not_returned'])->name('report.search_not_returned');
+
+
     Route::get('/reports', [ReportsController::class, 'index'])->name('reports');
     Route::get('/reports/Date-Wise', [ReportsController::class, 'date_wise'])->name('reports.date_wise');
     Route::post('/reports/Date-Wise', [ReportsController::class, 'generate_date_wise_report'])->name('reports.date_wise_generate');
@@ -99,4 +103,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
     Route::post('/settings', [SettingsController::class, 'update'])->name('settings');
+
+    Route::get('/register-volunteer', [VolunteerController::class, 'showRegistrationForm'])->name('register-volunteer')->middleware('is_supervisor');
+    Route::post('/register-volunteer', [VolunteerController::class, 'register'])->middleware('is_supervisor');
+
 });

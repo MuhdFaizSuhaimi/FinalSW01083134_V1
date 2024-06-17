@@ -21,6 +21,7 @@ class studentFactory extends Factory
             'email' => $this->faker->safeEmail,
             'phone' => $this->faker->phoneNumber,
             'address' => $this->faker->address,
+            'ICno' => random_int(10101010,80808080),
             'class' => $this->faker->sentence(3)
         ];
     }

@@ -4,10 +4,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="admin-heading">Add Student</h2>
+                    <h2 class="admin-heading">Add Member</h2>
                 </div>
                 <div class="offset-md-7 col-md-2">
-                    <a class="add-new" href="{{ route('students') }}">All Students</a>
+                    <a class="add-new" href="{{ route('students') }}">All Member</a>
                 </div>
             </div>
             <div class="row">
@@ -15,8 +15,8 @@
                     <form class="yourform" action="{{ route('student.store') }}" method="post" autocomplete="off">
                         @csrf
                         <div class="form-group">
-                            <label>Student Name</label>
-                            <input type="text" class="form-control" placeholder="Student Name" name="name"
+                            <label>Member Name</label>
+                            <input type="text" class="form-control" placeholder="Member Name" name="name"
                                 value="{{ old('name') }}" required>
                             @error('name')
                                 <div class="alert alert-danger" role="alert">
@@ -47,10 +47,10 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Class</label>
-                            <input type="text" class="form-control" placeholder="Class" name="class"
-                                value="{{ old('class') }}" required>
-                            @error('class')
+                            <label>Identification Number</label>
+                            <input type="text" class="form-control" placeholder="ICno" name="ICno"
+                                value="{{ old('ICno') }}" required>
+                            @error('ICno')
                                 <div class="alert alert-danger" role="alert">
                                     {{ $message }}
                                 </div>
@@ -86,6 +86,18 @@
                                 </div>
                             @enderror
                         </div>
+
+                        <div class="form-group">
+                            <label></label>
+                            <input type="hidden" class="form-control" placeholder="class" name="class"
+                                   value="{{ "0" }}" >
+                            @error('class')
+                            <div class="alert alert-danger" role="alert">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
                         <input type="submit" name="save" class="btn btn-danger" value="save">
                     </form>
                 </div>

@@ -112,4 +112,18 @@ class BookIssueController extends Controller
         book_issue::find($id)->delete();
         return redirect()->route('book_issued');
     }
+    public function search_not_returned(Request $request)
+    {
+        $search = $request->get('search');
+
+        $books = book_issue::whereHas('book', function ($query) use ($search) {
+            $query->where('id', $search);
+        })->orWhereHas('student', function ($query) use ($search) {
+            $query->where('ICno', $search);
+        })->latest()->get();
+
+        return view('report.notReturned', [
+            'books' => $books
+        ]);
+    }
 }

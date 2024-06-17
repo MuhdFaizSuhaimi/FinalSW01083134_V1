@@ -56,6 +56,17 @@
                         </div>
                     </div>
                 </div>
+                @if(Auth::user()->role == 'admin')
+                    <div class="col-md-3">
+                        <div class="card" style="width: 14rem; margin: 0 auto;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-0">Register<br>Volunteer</h5>
+                                <a href="{{ route('register-volunteer') }}" class="btn btn-primary mt-2">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>

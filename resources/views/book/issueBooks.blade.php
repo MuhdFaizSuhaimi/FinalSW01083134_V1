@@ -12,6 +12,14 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
+
+                    <form action="{{ route('report.search_not_returned') }}" method="GET" class="form-inline mb-3">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <input type="text" class="form-control" name="search" placeholder="Member IC No" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Search</button>
+                    </form>
+
                     <table class="content-table">
                         <thead>
                             <th>S.No</th>

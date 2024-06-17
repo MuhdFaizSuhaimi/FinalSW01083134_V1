@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="offset-md-3 col-md-6">
-                    <h2 class="admin-heading text-center">Not Returned Books</h2>
+                    <h2 class="admin-heading text-center">Return History Books</h2>
                 </div>
             </div>
             @if ($books)

@@ -49,6 +49,7 @@ class BookController extends Controller
         book::create($request->validated() + [
             'status' => 'Y'
         ]);
+
         return redirect()->route('books');
     }
 
@@ -83,6 +84,7 @@ class BookController extends Controller
         $book->auther_id = $request->author_id;
         $book->category_id = $request->category_id;
         $book->publisher_id = $request->publisher_id;
+        $book->published_year = $request->published_year;
         $book->save();
         return redirect()->route('books');
     }

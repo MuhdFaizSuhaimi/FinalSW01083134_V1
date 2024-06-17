@@ -27,7 +27,7 @@ class StorestudentRequest extends FormRequest
             'name' => "required",
             'address' => "required",
             'gender' => "required",
-            'class' => "required",
+            'ICno' => "required",
             'age' => "required",
             'phone' => "required",
             'email' => "required|email",

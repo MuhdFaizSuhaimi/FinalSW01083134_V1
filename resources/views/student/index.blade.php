@@ -17,6 +17,7 @@
                         <thead>
                             <th>S.No</th>
                             <th>Member Name</th>
+                            <th>Identification Number</th>
                             <th>Gender</th>
                             <th>Phone</th>
                             <th>Email</th>
@@ -29,11 +30,12 @@
                                 <tr>
                                     <td class="id">{{ $student->id }}</td>
                                     <td>{{ $student->name }}</td>
+                                    <td>{{ $student->ICno }}</td>
                                     <td class="text-capitalize">{{ $student->gender }}</td>
                                     <td>{{ $student->phone }}</td>
                                     <td>{{ $student->email }}</td>
                                     <td class="view">
-                                        <button data-sid='{{ $student->id }}>'
+                                        <button data-sid="{{ $student->id }}"
                                             class="btn btn-primary view-btn">View</button>
                                     </td>
                                     <td class="edit">
@@ -69,7 +71,7 @@
     </div>
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     <script type="text/javascript">
-        //Show shudent detail
+        //Show Member detail
         $(".view-btn").on("click", function() {
             var student_id = $(this).data("sid");
             $.ajax({
@@ -77,7 +79,7 @@
                 type: "get",
                 success: function(student) {
                     console.log(student);
-                    form ="<tr><td>Member Name :</td><td><b>"+student['name']+"</b></td></tr><tr><td>Address :</td><td><b>"+student['address']+"</b></td></tr><tr><td>Gender :</td><td><b>"+ student['gender']+ "</b></td></tr><tr><td>Age :</td><td><b>"+ student['age']+ "</b></td></tr><tr><td>Phone :</td><td><b>"+ student['phone']+ "</b></td></tr><tr><td>Email :</td><td><b>"+ student['email']+ "</b></td></tr>";
+                    form ="<tr><td>Member Name :</td><td><b>"+student['name']+"</b></td></tr><tr><td>IC number :</td><td><b>"+student['ICno']+"</b></td></tr><tr><td>Address :</td><td><b>"+student['address']+"</b></td></tr><tr><td>Gender :</td><td><b>"+ student['gender']+ "</b></td></tr><tr><td>Age :</td><td><b>"+ student['age']+ "</b></td></tr><tr><td>Phone :</td><td><b>"+ student['phone']+ "</b></td></tr><tr><td>Email :</td><td><b>"+ student['email']+ "</b></td></tr>";
           console.log(form);
 
                     $("#modal-form table").html(form);

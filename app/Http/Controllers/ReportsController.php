@@ -45,4 +45,6 @@ class ReportsController extends Controller
             'books' => book_issue::latest()->get()
         ]);
     }
+
+
 }

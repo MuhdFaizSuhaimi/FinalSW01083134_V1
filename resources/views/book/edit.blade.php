@@ -78,6 +78,18 @@
                                 </div>
                             @enderror
                         </div>
+
+                        <div class="form-group">
+                            <label>Published Year</label>
+                            <input type="date" class="form-control @error('published_year') is-invalid @enderror"
+                                   name="published_year" value="{{ old('published_year', $book->published_year ?? '') }}">
+                            @error('published_year')
+                            <div class="alert alert-danger" role="alert">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
                         <input type="submit" name="save" class="btn btn-danger" value="Update" >
                     </form>
                 </div>
